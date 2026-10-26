@@ -1,0 +1,48 @@
+/* namiura.css. Tokens first, components second, nothing third.
+   Load the mincho once in <head>:
+   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&display=swap" rel="stylesheet">
+   or self-host the two Latin subsets in fonts/ with @font-face (family "Shippori Mincho B1", weights 700 and 800). */
+:root {
+  --paper: #EDE1C8;  --foam: #F6EEDD;  --sky: #D8C0A0;  --line: #D9CAAA;
+  --ink: #283C56;  --wave: #4B6477;  --chevron: #7F90A8;  --vermilion: #B5362B;
+  --tan: #CAB99C;  --ochre: #C59A4A;        /* the boats, both modes */
+  --prussian: #283C56;  --label: #F6EEDD;   /* on labels, both modes */
+  --mincho: "Shippori Mincho B1", "Hiragino Mincho ProN", Georgia, serif;
+  --ui: -apple-system, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #1C2C42; --foam: #283C56; --sky: #283C56; --line: #3E5470;
+          --ink: #F6EEDD; --wave: #D8C0A0; --chevron: #8FA2BF; --vermilion: #E06A5C; }
+}
+html { background: var(--paper); color: var(--ink); }
+body { margin: 0; font: 17px/1.5 var(--ui); }
+h1, h2, .number { margin: 0; font-family: var(--mincho); font-weight: 700; line-height: 1.1; }
+.number { font-weight: 800; font-size: 64px; line-height: .95;
+          font-variant-numeric: lining-nums tabular-nums; }
+.cartouche { display: inline-block; padding: 2px 10px; background: var(--label);
+             color: var(--prussian); border: 1.5px solid var(--prussian);
+             border-radius: 2px; font: 700 30px/1.15 var(--mincho); }
+.cartouche.vertical { writing-mode: vertical-rl; padding: 10px 5px;
+                      font-size: 22px; letter-spacing: .12em; }
+.print { display: block; width: 100%; height: 300px; object-fit: cover; }  /* square, flat */
+.print.scene { height: 100vh; }
+.thumb { width: 44px; height: 44px; object-fit: cover; border-radius: 6px; }
+.label { padding: 2px 8px; background: var(--label); color: var(--prussian);
+         border: 1.5px solid var(--prussian); border-radius: 2px; }
+.now { display: inline-block; width: 8px; height: 8px; background: var(--ochre); }
+.mark { background: var(--tan); padding: 0 .15em; border-radius: 2px;
+        -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.meta { font-size: 13px; color: var(--wave); }
+a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--ochre);
+    text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { background: var(--tan); text-decoration: none; }
+.btn { min-height: 50px; padding: 0 22px; border: 1.5px solid var(--ink); border-radius: 4px;
+       background: var(--ink); color: var(--paper); font: 600 17px var(--ui); }
+.btn.secondary { background: var(--foam); color: var(--ink); }
+.btn.danger { background: var(--vermilion); border-color: var(--vermilion); color: var(--foam); }
+.circle { width: 36px; height: 36px; border: 0; border-radius: 18px;
+          background: var(--label); color: var(--prussian); }
+.list { background: var(--foam); border-radius: 10px; overflow: hidden; }
+.list > * + * { border-top: 1px solid var(--line); }
+.row { min-height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px 0 16px; }
+:focus-visible { outline: 2px solid var(--ochre); outline-offset: 1px; }

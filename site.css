@@ -1,0 +1,11 @@
+main { max-width: 680px; margin: 0 auto; padding: 0 16px 64px; }
+header { position: relative; }
+header .cartouche { position: absolute; right: 16px; top: 16px; }
+nav { display: flex; flex-wrap: wrap; gap: 16px; margin: 20px 0 8px; font-size: 15px; }
+h1 { font-size: 30px; margin: 28px 0 6px; }
+h2 { font-size: 22px; margin: 28px 0 8px; }
+p, li { max-width: 62ch; }
+.list { margin: 12px 0; }
+.list .row { padding-top: 10px; padding-bottom: 10px; display: block; }
+.credit { margin-top: 40px; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
